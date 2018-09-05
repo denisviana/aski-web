@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Aski_Web.Controllers
+namespace Aski_Web.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {

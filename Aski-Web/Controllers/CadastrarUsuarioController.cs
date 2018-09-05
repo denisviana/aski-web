@@ -6,11 +6,13 @@ using System.Web.Mvc;
 
 namespace Aski_Web.Controllers
 {
-    public class HomeController : Controller
+    public class CadastrarUsuarioController : Controller
     {
-        public ActionResult Index()
+
+        public ActionResult CadastrarUsuario()
         {
             return View();
         }
+
     }
 }
