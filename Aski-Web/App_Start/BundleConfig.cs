@@ -1,30 +1,36 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿    using System.Web;
+    using System.Web.Optimization;
 
-namespace Aski_Web
-{
-    public class BundleConfig
+    namespace Aski_Web
     {
-        // Para obter mais informações sobre o agrupamento, visite https://go.microsoft.com/fwlink/?LinkId=301862
-        public static void RegisterBundles(BundleCollection bundles)
+        public class BundleConfig
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            // Para obter mais informações sobre o agrupamento, visite https://go.microsoft.com/fwlink/?LinkId=301862
+            public static void RegisterBundles(BundleCollection bundles)
+            {
+                bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                            "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/mdl-js").Include(
+                            "~/Content/mdl-v1.1.2/material.min.js"));
 
-            // Use a versão em desenvolvimento do Modernizr para desenvolver e aprender. Em seguida, quando estiver
-            // pronto para a produção, utilize a ferramenta de build em https://modernizr.com para escolher somente os testes que precisa.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryunobtrusive").Include(
+                            "~/Scripts/jquery.unobtrusive*"));                                
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                            "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                // Use a versão em desenvolvimento do Modernizr para desenvolver e aprender. Em seguida, quando estiver
+                // pronto para a produção, utilize a ferramenta de build em https://modernizr.com para escolher somente os testes que precisa.
+                bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                            "~/Scripts/modernizr-*"));
+
+                bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                          "~/Scripts/bootstrap.js"));
+
+                bundles.Add(new StyleBundle("~/Content/css").Include(
+                          "~/Content/bootstrap.css",
+                          "~/Content/site.css"));
+            }
         }
     }
-}
