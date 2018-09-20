@@ -1,116 +1,152 @@
-﻿
+﻿* {
+margin: 0;
+padding: 0;
+}
+
+html {
+    height: 100%;
+}
 
 .body {
     font-family: 'Nunito', serif;
-    overflow-x: hidden;
+    overflow-y: hidden;
     padding: 20px;
+    height: 100%;
+    background-color: #038090;
+}
+
+.container {
 }
 
 .drawer-menu-logo {
-    width: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto;
 }
 
 .drawer-menu {
-    border: none;
+border: none;
 }
 
 .drawer-menu-header {
-    margin-top: 30px;
-    margin-bottom: 30px;
+margin-top: 30px;
+margin-bottom: 30px;
 }
 
 .mdl-navigation__link {
-    font-family: 'Nunito', serif;
-    align-items: center;
-    font-weight: 700;
+font-family: 'Nunito', serif;
+align-items: center;
+font-weight: 700;
 }
 
 .mdl-navigation__link{
-    font-size: 15px;
+font-size: 15px;
 }
 
 .mdl-navigation__link .material-icons {
-        font-size: 30px;
-        margin-right: 25px;
+font-size: 30px;
+margin-right: 25px;
 }
 
 .content {
-    max-width: 1080px;
-    position: relative;
+    height: 98%;
+    position: absolute;
+    width: 99.2%;
 }
 
 .lists-container {
-    margin-top: 40px;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+margin-top: 40px;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
 }
 
 .icons {
-    margin-left: 5px;
-    margin-right: 5px;
+margin-left: 5px;
+margin-right: 5px;
 }
 
 .bt-add-user {
-    position: absolute;
-    top: 45px;
-    right: 35px;
-    -webkit-transform: translate(0px, -28px);
-    transform: translate(0px, -28px);
+position: absolute;
+top: 45px;
+right: 35px;
+-webkit-transform: translate(0px, -28px);
+transform: translate(0px, -28px);
 }
 
 .mdl-layout__header .mdl-layout__header-row{
-    height: 80px;
+height: 80px;
 }
 
 .mdl-layout__header-row{
-    padding: 0;
+padding: 0;
 }
 
 .navbar-logo {
-    height: 60px;
+height: 60px;
 }
 
 .register-title {
-    margin: auto;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    font-family: 'Nunito', serif;
+margin: auto;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 20px;
+font-family: 'Nunito', serif;
 }
 
 .register-container{
-    border-radius: 6px;
-    max-width: 500px;
+border-radius: 6px;
+max-width: 500px;
 }
 
 .register-logo {
-    width: 100px;
-    display: block;
-    margin: auto;
+width: 100px;
+display: block;
+margin: auto;
 }
 
 .register-container-logo{
-    display: inline-grid;
-    margin-left: auto;   
-    margin-right: auto;
-    margin-bottom: 15px;
-    margin-top: 15px;
+display: inline-grid;
+margin-left: auto;   
+margin-right: auto;
+margin-bottom: 15px;
+margin-top: 15px;
 }
 
 .mdl-checkbox{
-    margin: 5px;
+margin: 5px;
 }
 
 .mdl-textfield__label__icon {
-    position: absolute;
-    left: 0;
-    top: 20px;
+position: absolute;
+left: 0;
+top: 20px;
 }
 
 .item-forms{
-    margin-left: 35px;
+margin-left: 35px;
 }
+
+#msform {
+    width: 400px;
+    margin: 50px auto;
+    position: relative;
+}
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 30% 0%;
+        /*stacking fieldsets above each other*/
+        position: absolute;
+    }
+    #msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
