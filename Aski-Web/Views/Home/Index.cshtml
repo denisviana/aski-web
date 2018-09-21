@@ -3,95 +3,86 @@
 }
 
 
-<div class="" id="partialViewContainer">
+<div >
 
-    <form class="mdl-cell--12-col" id="msform">
+    <form class="col s11 m9 l3" id="msform">
 
         <fieldset>
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <i class="material-icons mdl-textfield__label__icon">person</i>
-                <input class="mdl-textfield__input item-forms" type="text" id="name">
-                <label class="mdl-textfield__label item-forms" for="name">Nome Completo</label>
+            <div class="input-field col s12">
+                <input class="validate" type="text" id="name">
+                <label for="name">Nome Completo</label>
             </div>
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <i class="material-icons mdl-textfield__label__icon">email</i>
-                <input class="mdl-textfield__input item-forms" type="email" id="email">
-                <label class="mdl-textfield__label item-forms" for="email">E-mail</label>
+            <div class="input-field col s12">
+                <input class="validate" type="email" id="email">
+                <label for="email">E-mail</label>
             </div>
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <i class="material-icons mdl-textfield__label__icon">lock</i>
-                <input class="mdl-textfield__input item-forms" type="password" id="pass">
-                <label class="mdl-textfield__label item-forms" for="pass">Senha</label>
+            <div class="input-field col s12">
+                <input class="validate" type="password" id="pass">
+                <label for="pass">Senha</label>
             </div>
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <i class="material-icons mdl-textfield__label__icon">lock</i>
-                <input class="mdl-textfield__input item-forms" type="password" id="configm_pass">
-                <label class="mdl-textfield__label item-forms" for="configm_pass">Confirme a senha</label>
+            <div class="input-field col s12">
+                <input type="password" id="configm_pass">
+                <label for="configm_pass">Confirme a senha</label>
             </div>
 
+            <div style="display: block" class="col s12">
+                <input type="checkbox" id="checkbox-1" class="filled-in" checked="checked">
+                <label for="checkbox-1">Quero ajuda</label>
+            </div>
 
-            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
-                <span class="mdl-checkbox__label">Quero ajuda</span>
-            </label>
+            <div style="display: block; margin-top: 5px; margin-bottom: 20px;" class="col s12">
+                <input type="checkbox" id="checkbox-2" class="filled-in">
+                <label for="checkbox-2">Vou ajudar alguém</label>
+            </div>
 
-            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
-                <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
-                <span class="mdl-checkbox__label">Vou ajudar alguém</span>
-            </label>
-
-            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored next action-button" name="next" style="margin-top: 15px;">
+            <button class="next waves-effect waves-light btn-large " type="button" name="next" style="margin: 5px auto; display: block">
                 Próximo
             </button>
 
         </fieldset>
+                     
+        <fieldset>
 
-        <fieldset>        
-
-            <div class="mdl-textfield mdl-js-textfield getmdl-select">
-                <input type="text" value="" class="mdl-textfield__input" id="course" readonly>
-                <input type="hidden" value="" name="course">
-                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                <label for="course" class="mdl-textfield__label">Curso</label>
-                <ul for="course" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                    <li class="mdl-menu__item" data-val="SI">Sistemas de Informação</li>
-                    <li class="mdl-menu__item" data-val="CC">Ciência da Computação</li>
-                    <li class="mdl-menu__item" data-val="ENG">Engenharia Civil</li>
-                </ul>
-            </div>
-
-            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="graduado">
-                <input type="checkbox" id="graduado" class="mdl-switch__input">
-                <span class="mdl-switch__label">Já sou graduado</span>
-            </label>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input " type="password" id="configm_pass1">
-                <label class="mdl-textfield__label " for="configm_pass">Confirme a senha</label>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Selecione seu curso</option>
+                    <option value="1">Sistemas de Informação</option>
+                    <option value="2">Ciência da Computação</option>
+                    <option value="3">Engenharia Civil</option>
+                </select>
+                <label>Curso</label>
             </div>
 
 
-            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
-                <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked>
-                <span class="mdl-checkbox__label">Quero ajuda</span>
-            </label>
 
-            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input">
-                <span class="mdl-checkbox__label">Vou ajudar alguém</span>
-            </label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Autocomplete</label>
+                </div>
+            </div>
 
-            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored next action-button" name="next" style="margin-top: 15px;">
+            <!--
+        <div style="display: block" class="col s12">
+        <label for="graduado">
+            <input type="checkbox" class="filled-in" id="graduado">
+            <label for="graduado">Já sou graduado</label>
+        </label>
+    </div>
+
+    -->
+
+
+            <button class="next waves-effect waves-light btn-large" type="button" name="next" style="margin-top: 30px;">
                 Próximo
             </button>
+
         </fieldset>
 
     </form>
-
-    @*@Html.Partial("~/Views/CadastrarUsuario/_PartialCadastrarUsuarioStep1.cshtml")*@
 </div>
 

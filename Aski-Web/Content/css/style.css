@@ -3,19 +3,14 @@ margin: 0;
 padding: 0;
 }
 
-html {
+body {
     height: 100%;
-}
-
-.body {
-    font-family: 'Nunito', serif;
     overflow-y: hidden;
-    padding: 20px;
-    height: 100%;
-    background-color: #038090;
+    font-family: 'Nunito', serif;
+    background: #038090;
 }
 
-.container {
+.main-container {
 }
 
 .drawer-menu-logo {
@@ -50,9 +45,7 @@ margin-right: 25px;
 }
 
 .content {
-    height: 98%;
-    position: absolute;
-    width: 99.2%;
+
 }
 
 .lists-container {
@@ -114,39 +107,30 @@ margin-bottom: 15px;
 margin-top: 15px;
 }
 
-.mdl-checkbox{
-margin: 5px;
-}
-
-.mdl-textfield__label__icon {
-position: absolute;
-left: 0;
-top: 20px;
-}
-
 .item-forms{
 margin-left: 35px;
 }
 
 #msform {
-    width: 400px;
-    margin: 50px auto;
+    float: none;
+    margin: 0 auto;
     position: relative;
 }
 
-    #msform fieldset {
-        background: white;
-        border: 0 none;
-        border-radius: 3px;
-        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-        padding: 20px 30px;
-        box-sizing: border-box;
-        width: 100%;
-        margin: 30% 0%;
-        /*stacking fieldsets above each other*/
-        position: absolute;
-    }
-    #msform fieldset:not(:first-of-type) {
-    display: none;
+#msform fieldset {
+    left: 0;
+    background: white;
+    border: 0 none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    margin: 40% auto;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display : none;
 }
 
