@@ -5,7 +5,7 @@
 
 <div >
 
-    <form class="col s11 m9 l3" id="msform">
+    <form class="col s11 m9 l4" id="msform">
 
         <fieldset>
 
@@ -30,16 +30,20 @@
             </div>
 
             <div style="display: block" class="col s12">
-                <input type="checkbox" id="checkbox-1" class="filled-in" checked="checked">
-                <label for="checkbox-1">Quero ajuda</label>
+                <label>
+                    <input type="checkbox" id="checkbox-1" class="filled-in" checked="checked">
+                    <span>Quero ajuda</span>
+                </label>                
             </div>
 
-            <div style="display: block; margin-top: 5px; margin-bottom: 20px;" class="col s12">
-                <input type="checkbox" id="checkbox-2" class="filled-in">
-                <label for="checkbox-2">Vou ajudar alguém</label>
+            <div style="display: block; margin-bottom: 20px;" class="col s12">
+                <label>
+                    <input type="checkbox" id="checkbox-2" class="filled-in">
+                    <span>Vou ajudar alguém</span>
+                </label>
             </div>
 
-            <button class="next waves-effect waves-light btn-large " type="button" name="next" style="margin: 5px auto; display: block">
+            <button class="next waves-effect waves-light btn" type="button" name="next" style="margin: 5px auto; display: block">
                 Próximo
             </button>
 
@@ -57,14 +61,11 @@
                 <label>Curso</label>
             </div>
 
-
-
-            <div class="row">
-                <div class="input-field col s12">
-                    <input type="text" id="autocomplete-input" class="autocomplete">
-                    <label for="autocomplete-input">Autocomplete</label>
-                </div>
+            <div class="col s12">
+                <div class="chips chips-placeholder chips-autocomplete"></div>
             </div>
+            <span class="col s12" style="font-size: 13px; color: darkgray;">Informe as matérias que você possui <b>dificuldades.</b></span>
+
 
             <!--
         <div style="display: block" class="col s12">
@@ -77,7 +78,7 @@
     -->
 
 
-            <button class="next waves-effect waves-light btn-large" type="button" name="next" style="margin-top: 30px;">
+            <button class="next waves-effect waves-light btn" type="button" name="next" style="margin-top: 30px;">
                 Próximo
             </button>
 

@@ -5,9 +5,8 @@ padding: 0;
 
 body {
     height: 100%;
-    overflow-y: hidden;
     font-family: 'Nunito', serif;
-    background: #038090;
+    background: #f6f5f5;
 }
 
 .main-container {
@@ -127,10 +126,20 @@ margin-left: 35px;
     box-sizing: border-box;
     width: 100%;
     position: absolute;
-    margin: 40% auto;
+    margin: 0% auto;
 }
 
 #msform fieldset:not(:first-of-type) {
     display : none;
+}
+
+.input-field{
+    margin-bottom: 2px;
+}
+
+.logo{
+    margin: 30px auto;
+    display: block;
+   width: 160px;
 }
 

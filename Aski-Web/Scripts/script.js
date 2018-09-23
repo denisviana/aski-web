@@ -1,13 +1,29 @@
 ﻿$(document).ready(function() {
 
-    $('select').material_select();
-    
-});
+    $('select').formSelect();
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
-  });
+    $('.chips-autocomplete').chips({
+        placeholder: 'Matérias',
+        autocompleteOptions: {
+            data: {
+                'Banco de Dados': null,
+                'Algoritmos': null,
+                'Programação Orientada a Objetos': null,
+                'Design de Interação': null,
+                'Análise e Projeto de Sistemas': null,
+                'Sistemas Operacionais': null,
+                'Desenvolvimento de Software': null,
+                'Estrutura de Dados': null
+            
+            },
+            limit: Infinity,
+            minLength: 1
+        }
+    });
+
+   
+
+});
 
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
