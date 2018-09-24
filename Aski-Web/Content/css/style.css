@@ -145,3 +145,30 @@ margin-left: 35px;
    width: 160px;
 }
 
+.input-field .helper-text {
+    color: red;
+}
+
+.helper-text {
+    color: red;
+}
+
+.want-to-help {
+
+}
+
+.want-be-helped {
+
+}
+
+.autocomplete-content {
+    width: 100%;
+}
+
+.dropdown-content {
+   min-width: 200px;
+}
+
+.chips .input {
+    width: 160px !important;
+}

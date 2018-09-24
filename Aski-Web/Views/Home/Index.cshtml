@@ -5,7 +5,7 @@
 
 <div >
 
-    <form class="col s11 m9 l4" id="msform">
+    <form class="col s11 m9 l3" id="msform">
 
         <fieldset id="fs-1">
 
@@ -30,7 +30,7 @@
 
             <div class="input-field col s12" style="margin-bottom: 10px;">
                 <input type="password" id="confirm_pass" name="confirm_pass">
-                <label for="configm_pass">Confirme a senha</label>
+                <label for="confirm_pass">Confirme a senha</label>
             </div>
 
             <label class="col s12 m6 l6 cb_container">
@@ -43,7 +43,7 @@
                 <span>Vou ajudar alguém</span>
             </label>
 
-            <div class="helper-text" id="cb_error" name="cbs"></div>
+            <div id="cb_error" name="cb_error"></div>
 
             <button class="next waves-effect waves-light btn center-align" type="button" name="next" id="next-fs1" style="margin-top: 20px;">
                 Próximo
@@ -52,14 +52,12 @@
         </fieldset>
 
         <fieldset id="fs-2">
-
-            <div class="col s12">
+            <div class="col s12 want-be-helped">
                 <h6 class="center-align" style="margin-bottom: 15px;"><b>Quais matérias você tem dificuldades?</b></h6>
             </div>
-
-            <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Selecione seu curso</option>
+            <div class="input-field col s12 want-be-helped" id="select_course_container">
+                <select name="select_course" id="select_course" required>
+                    <option value="0" disabled selected>Selecione seu curso</option>
                     <option value="1">Sistemas de Informação</option>
                     <option value="2">Ciência da Computação</option>
                     <option value="3">Engenharia Civil</option>
@@ -67,30 +65,22 @@
                 <label>Curso</label>
             </div>
 
-            <div class="col s12">
-                <div class="chips chips-placeholder chips-autocomplete" id="chips-want-be-helped"></div>
+            <div class="col s12 want-be-helped" id="chips_container1">
+                <div class="chips chips-placeholder chips-autocomplete" id="chips_want_be_helped" name="chips_want_be_helped"></div>
+                <span class="helper-text" id="course_error">Informe pelo menos uma matéria.</span>
             </div>
 
-            <button class="next waves-effect waves-light btn center-align" type="button" name="next" style="margin-top: 20px;">
-                Próximo
-            </button>
-        </fieldset>
-
-        <fieldset id="fs-3">
-
-            <div class="col s12">
-                <h6 class="center-align" style="margin-bottom: 15px;"><b>Ajude outros universitários, informe as disciplinas que você domina.</b></h6>
-            </div>
-
-            <div class="col s12">
+            <div class="col s12 want-to-help" id="chips_container2">
                 <div class="chips chips-placeholder chips-autocomplete" id="chips-want-to-help"></div>
             </div>
 
-            <button class="next waves-effect waves-light btn center-align" type="submit" name="next" style="margin-top: 20px;">
-                Finalizar
+            <button class="next waves-effect waves-light btn center-align" id="next-fs2" type="button" name="next" style="margin-top: 20px;">
+                Próximo
             </button>
-        </fieldset>
 
+
+        </fieldset>
+       
     </form>
 </div>
 
