@@ -7,49 +7,55 @@
 
     <form class="col s11 m9 l4" id="msform">
 
-        <fieldset>
+        <fieldset id="fs-1">
+
+            <div class="col s12">
+                <h6 class="center-align"><b>Cadastro</b></h6>
+            </div>
 
             <div class="input-field col s12">
-                <input class="validate" type="text" id="name">
+                <input class="validate" type="text" id="name" name="name">
                 <label for="name">Nome Completo</label>
             </div>
 
             <div class="input-field col s12">
-                <input class="validate" type="email" id="email">
+                <input class="validate" type="email" id="email" name="email">
                 <label for="email">E-mail</label>
             </div>
 
             <div class="input-field col s12">
-                <input class="validate" type="password" id="pass">
+                <input class="validate" type="password" id="pass" name="pass">
                 <label for="pass">Senha</label>
             </div>
 
-            <div class="input-field col s12">
-                <input type="password" id="configm_pass">
+            <div class="input-field col s12" style="margin-bottom: 10px;">
+                <input type="password" id="confirm_pass" name="confirm_pass">
                 <label for="configm_pass">Confirme a senha</label>
             </div>
 
-            <div style="display: block" class="col s12">
-                <label>
-                    <input type="checkbox" id="checkbox-1" class="filled-in" checked="checked">
-                    <span>Quero ajuda</span>
-                </label>                
-            </div>
+            <label class="col s12 m6 l6 cb_container">
+                <input type="checkbox" id="cb_1" name="cb_1" class="filled-in require-one" value="true" checked="checked">
+                <span>Quero ajuda</span>
+            </label>
 
-            <div style="display: block; margin-bottom: 20px;" class="col s12">
-                <label>
-                    <input type="checkbox" id="checkbox-2" class="filled-in">
-                    <span>Vou ajudar alguém</span>
-                </label>
-            </div>
+            <label class="col s12 m6 l6 cb_container">
+                <input type="checkbox" id="cb_2" name="cb_2" class="filled-in require-one" value="true"s>
+                <span>Vou ajudar alguém</span>
+            </label>
 
-            <button class="next waves-effect waves-light btn" type="button" name="next" style="margin: 5px auto; display: block">
+            <div class="helper-text" id="cb_error" name="cbs"></div>
+
+            <button class="next waves-effect waves-light btn center-align" type="button" name="next" id="next-fs1" style="margin-top: 20px;">
                 Próximo
             </button>
 
         </fieldset>
-                     
-        <fieldset>
+
+        <fieldset id="fs-2">
+
+            <div class="col s12">
+                <h6 class="center-align" style="margin-bottom: 15px;"><b>Quais matérias você tem dificuldades?</b></h6>
+            </div>
 
             <div class="input-field col s12">
                 <select>
@@ -62,26 +68,27 @@
             </div>
 
             <div class="col s12">
-                <div class="chips chips-placeholder chips-autocomplete"></div>
+                <div class="chips chips-placeholder chips-autocomplete" id="chips-want-be-helped"></div>
             </div>
-            <span class="col s12" style="font-size: 13px; color: darkgray;">Informe as matérias que você possui <b>dificuldades.</b></span>
 
-
-            <!--
-        <div style="display: block" class="col s12">
-        <label for="graduado">
-            <input type="checkbox" class="filled-in" id="graduado">
-            <label for="graduado">Já sou graduado</label>
-        </label>
-    </div>
-
-    -->
-
-
-            <button class="next waves-effect waves-light btn" type="button" name="next" style="margin-top: 30px;">
+            <button class="next waves-effect waves-light btn center-align" type="button" name="next" style="margin-top: 20px;">
                 Próximo
             </button>
+        </fieldset>
 
+        <fieldset id="fs-3">
+
+            <div class="col s12">
+                <h6 class="center-align" style="margin-bottom: 15px;"><b>Ajude outros universitários, informe as disciplinas que você domina.</b></h6>
+            </div>
+
+            <div class="col s12">
+                <div class="chips chips-placeholder chips-autocomplete" id="chips-want-to-help"></div>
+            </div>
+
+            <button class="next waves-effect waves-light btn center-align" type="submit" name="next" style="margin-top: 20px;">
+                Finalizar
+            </button>
         </fieldset>
 
     </form>
