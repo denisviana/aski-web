@@ -13,9 +13,9 @@ namespace Aski_Web.Areas.Admin.Controllers
 
         private HttpClient client = RestClient.getInstance();
 
-        public async Task<ActionResult> Home()
+        public ActionResult Home()
         {
-            HttpResponseMessage response = await client.GetAsync("api/disciplines");
+            var response = client.GetAsync("api/disciplines").Result;
             List<Discipline> disciplines = new List<Discipline>();
 
             if (response.IsSuccessStatusCode)
@@ -23,6 +23,10 @@ namespace Aski_Web.Areas.Admin.Controllers
                 disciplines = response.Content.ReadAsAsync<List<Discipline>>().Result;
             }
 
+            return View(disciplines);
+        }
+
+        public ActionResult Cadastrar(){
             return View();
         }
 

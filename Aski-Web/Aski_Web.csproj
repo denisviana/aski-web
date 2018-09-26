@@ -325,6 +325,7 @@
     <Content Include="Content\getmdl-select.min.css" />
     <None Include="Content\getmdl-select.min.css.map" />
     <Content Include="Areas\Admin\Views\Disciplines\Home.cshtml" />
+    <Content Include="Areas\Admin\Views\Disciplines\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
