@@ -1,0 +1,181 @@
+﻿* {
+margin: 0;
+padding: 0;
+}
+
+
+body {
+    height: 100%;
+    font-family: 'Nunito', serif;
+    background: #f6f5f5;
+}
+
+.main-container {
+}
+
+.drawer-menu-logo {
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.drawer-menu {
+border: none;
+}
+
+.drawer-menu-header {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.mdl-navigation__link {
+font-family: 'Nunito', serif;
+align-items: center;
+font-weight: 700;
+}
+
+.mdl-navigation__link{
+font-size: 15px;
+}
+
+.mdl-navigation__link .material-icons {
+font-size: 30px;
+margin-right: 25px;
+}
+
+.content {
+
+}
+
+.lists-container {
+margin-top: 40px;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+}
+
+.icons {
+margin-left: 5px;
+margin-right: 5px;
+}
+
+.bt-add-user {
+position: absolute;
+top: 45px;
+right: 35px;
+-webkit-transform: translate(0px, -28px);
+transform: translate(0px, -28px);
+}
+
+.mdl-layout__header .mdl-layout__header-row{
+height: 80px;
+}
+
+.mdl-layout__header-row{
+padding: 0;
+}
+
+.navbar-logo {
+height: 60px;
+}
+
+.register-title {
+margin: auto;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 20px;
+font-family: 'Nunito', serif;
+}
+
+.register-container{
+border-radius: 6px;
+max-width: 500px;
+}
+
+.register-logo {
+width: 100px;
+display: block;
+margin: auto;
+}
+
+.register-container-logo{
+display: inline-grid;
+margin-left: auto;   
+margin-right: auto;
+margin-bottom: 15px;
+margin-top: 15px;
+}
+
+.item-forms{
+margin-left: 35px;
+}
+
+#msform {
+    float: none;
+    margin: 0 auto;
+    position: relative;
+}
+
+#msform fieldset {
+    left: 0;
+    background: white;
+    border: 0 none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    margin: 12% auto;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display : none;
+}
+
+.input-field{
+    margin-bottom: 2px;
+}
+
+.logo{
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 160px;
+}
+
+.input-field .helper-text {
+    color: red;
+}
+
+.helper-text {
+    color: red;
+}
+
+.want-to-help {
+
+}
+
+.want-be-helped {
+
+}
+
+.autocomplete-content {
+    width: 100%;
+}
+
+.dropdown-content {
+   min-width: 200px;
+}
+
+.chips .input {
+    width: 160px !important;
+}
+
+.register-header {
+    font-size: 13px;
+    margin-top: 20px;
+    color: #038090;
+}
