@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aski-Web", "Aski-Web\Aski-Web.csproj", "{E85C1416-ACE8-47EE-8063-F14500539804}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aski_Web", "Aski-Web\Aski_Web.csproj", "{E85C1416-ACE8-47EE-8063-F14500539804}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,8 +22,6 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60FCABE7-03F2-46D4-9103-5C1EC4246537}
 	EndGlobalSection
-<<<<<<< HEAD
-=======
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
@@ -31,5 +29,4 @@ Global
 		$0.StandardHeader = $2
 		$0.VersionControlPolicy = $3
 	EndGlobalSection
->>>>>>> a0ad4c148248b0d9cd66a24e7491e8dce351ef84
 EndGlobal

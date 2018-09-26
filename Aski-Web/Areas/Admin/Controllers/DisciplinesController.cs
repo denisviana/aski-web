@@ -6,16 +6,16 @@ using Aski_Web.Models;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Aski_Web.Controllers
+namespace Aski_Web.Areas.Admin.Controllers
 {
     public class DisciplinesController : Controller
     {
 
-        private RestClient client = RestClient.getInstance();
+        private HttpClient client = RestClient.getInstance();
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Home()
         {
-            HttpResponseMessage response = await client.GetAsync("api/discipline");
+            HttpResponseMessage response = await client.GetAsync("api/disciplines");
             List<Discipline> disciplines = new List<Discipline>();
 
             if (response.IsSuccessStatusCode)
@@ -23,7 +23,7 @@ namespace Aski_Web.Controllers
                 disciplines = response.Content.ReadAsAsync<List<Discipline>>().Result;
             }
 
-            return View(disciplines);
+            return View();
         }
 
 
@@ -45,7 +45,7 @@ namespace Aski_Web.Controllers
         //Get all disciplines
         public async Task<ActionResult> GetAllDisciplinesAsync(){
 
-            HttpResponseMessage response = await client.GetAsync("api/discipline");
+            HttpResponseMessage response = await client.GetAsync("api/disciplines");
             List<Discipline> disciplines = new List<Discipline>();
 
             if(response.IsSuccessStatusCode){

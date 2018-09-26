@@ -6,22 +6,23 @@ namespace Aski_Web.Network
     public class RestClient : HttpClient
     {
 
-        private static RestClient instance;
+        private static HttpClient instance;
 
         private RestClient()
         {
-            instance = new RestClient
-            {
-                BaseAddress = new Uri("https://aski-api.azurewebsites.net/")
-            };
-            instance.DefaultRequestHeaders.Accept.Clear();
-            instance.DefaultRequestHeaders.Accept.Add(
-                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
         }
 
-        public static RestClient getInstance(){
-            if (instance == null)
-                instance = new RestClient();
+        public static HttpClient getInstance(){
+            if (instance == null){
+                instance = new HttpClient
+                {
+                    BaseAddress = new Uri("https://aski-api.azurewebsites.net/")
+                };
+                instance.DefaultRequestHeaders.Accept.Clear();
+                instance.DefaultRequestHeaders.Accept.Add(
+                    new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            }
 
             return instance;
         }
