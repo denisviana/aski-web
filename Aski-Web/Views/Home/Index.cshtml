@@ -11,6 +11,7 @@
 
             <div class="col s12">
                 <h6 class="center-align"><b>Cadastro</b></h6>
+                <h6 class="left-align register-header"><b>CADASTRO</b></h6>
             </div>
 
             <div class="input-field col s12">
@@ -40,6 +41,7 @@
 
             <label class="col s12 m6 l6 cb_container">
                 <input type="checkbox" id="cb_2" name="cb_2" class="filled-in require-one" value="true"s>
+                <input type="checkbox" id="cb_2" name="cb_2" class="filled-in require-one" value="true">
                 <span>Vou ajudar alguém</span>
             </label>
 
@@ -52,9 +54,7 @@
         </fieldset>
 
         <fieldset id="fs-2">
-            <div class="col s12 want-be-helped">
-                <h6 class="center-align" style="margin-bottom: 15px;"><b>Quais matérias você tem dificuldades?</b></h6>
-            </div>
+
             <div class="input-field col s12 want-be-helped" id="select_course_container">
                 <select name="select_course" id="select_course" required>
                     <option value="0" disabled selected>Selecione seu curso</option>
@@ -65,19 +65,30 @@
                 <label>Curso</label>
             </div>
 
+            <div class="col s12 want-be-helped">
+                <h6 class="left-align register-header"><b>NOS DIGA COM QUAIS MATÉRIAS VOCÊ PRECISA DE AJUDA.</b></h6>
+            </div>
+
             <div class="col s12 want-be-helped" id="chips_container1">
                 <div class="chips chips-placeholder chips-autocomplete" id="chips_want_be_helped" name="chips_want_be_helped"></div>
                 <span class="helper-text" id="course_error">Informe pelo menos uma matéria.</span>
+            </div>
+            
+            <div class="col s12 want-to-help">
+                <h6 class="left-align register-header"><b>AJUDE OUTRAS PESSOAS, INFORME AS MATÉRIAS QUE VOCÊ DOMINA.</b></h6>
             </div>
 
             <div class="col s12 want-to-help" id="chips_container2">
                 <div class="chips chips-placeholder chips-autocomplete" id="chips-want-to-help"></div>
             </div>
 
-            <button class="next waves-effect waves-light btn center-align" id="next-fs2" type="button" name="next" style="margin-top: 20px;">
-                Próximo
+            <button class="next waves-effect waves-light btn center-align" id="previous-fs2" type="button" name="next" style="margin-top: 20px; margin-right: 20px;">
+                Anterior
             </button>
 
+            <button class="next waves-effect waves-light btn center-align" id="next-fs2" type="submit" name="next" style="margin-top: 20px;">
+                FINALIZAR
+            </button>
 
         </fieldset>
        

@@ -31,8 +31,21 @@ $('#chips_want_be_helped').chips({
     onChipAdd(e,chip){
         var elem = document.querySelector('.chips');
         var instance = M.Chips.getInstance(elem);
-        console.log(chip);
-        console.log(instance.chipsData);
+        var content = chip.childNodes[0].textContent
+        var dataInserted = instance.chipsData;
+        var data = instance.options.autocompleteOptions.data;
+
+        var contains = false;
+        
+        $.each(data, function(index, value){
+            if(index == content)
+                contains = true;
+        });
+
+        if(!contains){            
+            instance.chipsData.splice(dataInserted.length-1,dataInserted.length);
+            $(chip).detach();
+        }
     },
     onChipDelete(e,chip){
     }
@@ -54,6 +67,25 @@ $('#chips-want-to-help').chips({
     },
     limit: Infinity,
     minLength: 1
+    },
+    onChipAdd(e,chip){
+        var elem = document.querySelector('.chips');
+        var instance = M.Chips.getInstance(elem);
+        var content = chip.childNodes[0].textContent
+        var dataInserted = instance.chipsData;
+        var data = instance.options.autocompleteOptions.data;
+
+        var contains = false;
+        
+        $.each(data, function(index, value){
+            if(index == content)
+                contains = true;
+        });
+
+        if(!contains){            
+            instance.chipsData.splice(dataInserted.length-1,dataInserted.length);
+            $(chip).detach();
+        }
     }
 });
 
@@ -211,6 +243,33 @@ $("#next-fs2").click(function(){
 
     }
 });
+
+
+$("#previous-fs2").click(function(){
+
+    if (animating) return false;
+                        animating = true;
+
+                current_fs = $(this).parent();
+                previous_fs = $(this).parent().prev();
+                previous_fs.show();
+                current_fs.animate({ opacity : 0}, {
+                    step: function(now, mx){
+                    scale = 0.8 + (1 - now) * 0.2
+                    left = ((1-now) * 50)+"%";
+                    opacity = 1 - now;
+                    current_fs.css({'left': left});
+                    previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+                    },
+                    duration: 800,
+                    complete: function(){
+                    current_fs.hide();
+                    animating = false;
+                    },
+                    easing: 'easeInOutBack'
+                });
+
+    })
 
 });
 

@@ -153,6 +153,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Areas\Admin\Controllers\MateriasController.cs" />
+    <Compile Include="Models\Materia.cs" />
+>>>>>>> a0ad4c148248b0d9cd66a24e7491e8dce351ef84
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\style.css" />
@@ -318,11 +323,19 @@
     <Content Include="Scripts\getmdl-select.js" />
     <Content Include="Content\getmdl-select.min.css" />
     <None Include="Content\getmdl-select.min.css.map" />
+<<<<<<< HEAD
+=======
+    <Content Include="Areas\Admin\Views\Materias\Materias.html" />
+>>>>>>> a0ad4c148248b0d9cd66a24e7491e8dce351ef84
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
+<<<<<<< HEAD
+=======
+    <Folder Include="Areas\Admin\Views\Materias\" />
+>>>>>>> a0ad4c148248b0d9cd66a24e7491e8dce351ef84
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
