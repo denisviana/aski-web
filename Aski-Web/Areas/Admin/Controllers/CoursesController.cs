@@ -40,16 +40,31 @@ namespace Aski_Web.Areas.Admin.Controllers
         public ActionResult Cadastrar(Course course)
         {
 
-            var response = client.PostAsJsonAsync("api/courses", course).Result;
 
-            if (response.IsSuccessStatusCode)
-            {
+            if (ModelState.IsValid){
+                var response = client.PostAsJsonAsync("api/courses", course).Result;
+                dynamic showMessageString = string.Empty;
 
-                return View();
+                if (response.IsSuccessStatusCode)
+                {
+                    showMessageString = new
+                    {
+                        msg = "Curso cadastrado com sucesso."
+                    };
+                }
+                else
+                {
+                    showMessageString = new
+                    {
+                        msg = "Falha ao cadastrar o curso."
+                    };
+                }
+
+                return Json(showMessageString, JsonRequestBehavior.AllowGet);
 
             }
-
-            return View();
+            
+            return View(course);
         }
     }
 }

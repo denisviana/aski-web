@@ -182,11 +182,20 @@ margin-left: 35px;
 }
 
 
-.form-register-discipline {
+.form-register {
 
     margin-top: 35px;
     margin-left: auto;
     margin-right: auto;
     padding: 25px;
 
+}
+
+.icons {
+    display: inline-block;
+}
+
+.error {
+    font-size: 13px;
+    color: red;
 }
