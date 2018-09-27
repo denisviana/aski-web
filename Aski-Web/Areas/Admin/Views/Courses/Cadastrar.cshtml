@@ -1,0 +1,36 @@
+﻿@using Aski_Web.Models
+@model Course
+
+@{
+    ViewBag.Title = "Cadastrar Curso";
+}
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid form-register-discipline">
+
+    @using (Html.BeginForm("Cadastrar",
+        "Courses", FormMethod.Post,
+    new { @class = "form-horizontal" }))
+    {
+        <form>
+            <div class="mdl-textfield mdl-js-textfield mdl-cell--12-col">
+                @Html.EditorFor(model => model.Name,
+                    new
+                    {
+                        htmlAttributes = new
+                        {
+                            @class = "mdl-textfield__input",       
+                            type = "text",
+                            @placeholder = "Nome do Curso"
+                        }
+                    }
+               )
+            </div>
+
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell--5-col" value="Create" type="submit">
+                Cadastrar
+            </button>
+            <div class="mdl-layout-spacer"></div>
+        </form>
+    }
+
+</div>

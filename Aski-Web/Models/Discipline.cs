@@ -6,6 +6,7 @@ namespace Aski_Web.Models
     {
         public string Id { get; set; }
         public string Name { get; set; }
+        public Course Course {get; set;}
         public List<User> UsersOwners { get; set; }
         public List<User> DependentUsers { get; set; }
     }

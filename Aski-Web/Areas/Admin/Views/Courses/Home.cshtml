@@ -1,0 +1,26 @@
+﻿
+@using Aski_Web.Models
+@model List<Course>
+
+@{
+    ViewBag.Title = "Cursos";
+}
+
+<div class="mdl-color--white lists-container mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bt-add-user mdl-color--primary" onclick="location.href='@Url.Action("Cadastrar","Courses")'">
+        <i class="material-icons">add</i>
+    </button>
+    <ul class="demo-list-icon mdl-list mdl-cell--12-col">
+        @foreach (Course course in Model)
+        {
+            <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">book</i>
+                    @course.Name
+                </span>
+                <a class="mdl-color-text--grey-500" href="#"><i class="material-icons icons">edit</i></a>
+                <a class="mdl-color-text--grey-500" href="#"><i class="material-icons icons">delete</i></a>
+            </li>
+        }
+    </ul>
+</div>
