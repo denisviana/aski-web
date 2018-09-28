@@ -23,6 +23,7 @@ namespace Aski_Web.Areas.Admin.Controllers
 
             if (response.IsSuccessStatusCode)
             {
+
                 courses = response.Content.ReadAsAsync<List<Course>>().Result;
             }
 
@@ -34,37 +35,88 @@ namespace Aski_Web.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult Editar(String id){
+
+            var response = client.GetAsync("api/courses/" + id).Result;
+
+            if(response.IsSuccessStatusCode){
+                var course = response.Content.ReadAsAsync<Course>().Result;
+                return View(course);
+            }
+               
+
+            ViewBag.ToastMsg = "Falha ao recuperar os dados";
+
+            return View(new Course());
+
+        }
+
 
         //Save course
         [HttpPost]
         public ActionResult Cadastrar(Course course)
         {
 
-
-            if (ModelState.IsValid){
+            if (ModelState.IsValid)
+            {
                 var response = client.PostAsJsonAsync("api/courses", course).Result;
-                dynamic showMessageString = string.Empty;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    showMessageString = new
-                    {
-                        msg = "Curso cadastrado com sucesso."
-                    };
-                }
-                else
-                {
-                    showMessageString = new
-                    {
-                        msg = "Falha ao cadastrar o curso."
-                    };
+                    ViewBag.ToastMsg = "Cadastro realizado com sucesso.";
+                    ModelState.Clear();
+                    return View();
                 }
 
-                return Json(showMessageString, JsonRequestBehavior.AllowGet);
+                if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+                    ViewBag.ToastMsg = "Já existe um curso com o mesmo nome.";
+                else
+                    ViewBag.ToastMsg = "Falha ao cadastrar o curso.";
+
+                return View(course);
 
             }
-            
             return View(course);
+        }
+
+
+        [HttpPost]
+        public ActionResult EditarCurso(Course course){
+
+            if (ModelState.IsValid)
+            {
+
+                var response = client.PutAsJsonAsync("api/courses/" + course.Id, course).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    ViewBag.ToastMsg = "Curso atualizado com sucesso";
+                    ModelState.Clear();
+                    return RedirectToAction("Home", "Courses");
+                }
+
+                ViewBag.ToastMsg = "Falha ao atualizar o curso";
+                return View(course);
+
+            }
+            return View(course);
+
+        }
+
+        public ActionResult RemoverCurso(String id){
+
+            var response = client.DeleteAsync("api/courses/"+id).Result;
+
+            if (response.IsSuccessStatusCode)
+                ViewBag.ToastMsg = "Curso removido com sucesso";
+
+            else
+            {
+                ViewBag.ToastMsg = "Falha ao remover o curso";
+                return View();
+            }
+
+            return RedirectToAction("Home","Courses");
+
         }
     }
 }

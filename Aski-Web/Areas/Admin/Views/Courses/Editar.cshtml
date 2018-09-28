@@ -1,0 +1,37 @@
+﻿
+@using Aski_Web.Models
+@model Course
+
+@{
+    ViewBag.Title = "Editar Curso";
+}
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid form-register">
+
+    @using (Html.BeginForm("EditarCurso",
+        "Courses", FormMethod.Post))
+    {
+
+        <form>
+            @Html.HiddenFor(model => model.Id)
+            <div class="mdl-textfield mdl-js-textfield mdl-cell--12-col">
+                @Html.EditorFor(model => model.Name,
+                                      new
+                                      {
+                                          htmlAttributes = new
+                                          {
+                                              @class = "mdl-textfield__input",
+                                              type = "text",
+                                              @placeholder = "Nome do Curso"
+                                          }
+                                      }
+                                 )
+                @Html.ValidationMessageFor(model => model.Name, null, new { style = "color: red; font-size: 13px;" })
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell--5-col" value="Edit" type="submit">
+                Cadastrar
+            </button>
+            <div class="mdl-layout-spacer"></div>
+        </form>
+    }
+</div>

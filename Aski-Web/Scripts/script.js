@@ -9,7 +9,8 @@ $('#course_error').hide();
 
 $(document).ready(function () {
 
-$('select').formSelect();
+    $('select').formSelect();
+    $('.modal').modal();
 
 $('#chips_want_be_helped').chips({
     placeholder: 'Quero ajuda com',

@@ -2,18 +2,13 @@
 
 $(document).ready(function (){
 
-    
 
-});
 
-function OnSuccessCourseRegister(data){
+})
 
-    M.toast({html: data.msg})
-    
-}
+function OnStatusRegisterMsg(data){
 
-function OnFailureCourseRegister(data){
-
-    M.toast({html: data})
+   M.toast({html: data})
     
 }
+
