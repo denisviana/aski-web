@@ -12,7 +12,7 @@ namespace Aski_Web.Controllers
     public class HomeController : Controller
     {
 
-        private HttpClient client = RestClient.getInstance();
+        HttpClient client = RestClient.getInstance();
 
         public ActionResult Index()
         {
@@ -27,10 +27,23 @@ namespace Aski_Web.Controllers
                     HasDificultyIn = disciplines
                 };
 
-                return View(user);
+                var homeViewModel = new HomeViewModel
+                {
+                    User = user
+                };
+
+                return View(homeViewModel);
             }
 
             return View();
+        }
+
+
+        [HttpPost]
+        public JsonResult SaveUser(HomeViewModel homeViewModel){
+
+
+            return Json(homeViewModel, JsonRequestBehavior.AllowGet);
         }
     }
 }
