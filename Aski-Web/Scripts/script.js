@@ -12,83 +12,6 @@ $(document).ready(function () {
     $('select').formSelect();
     $('.modal').modal();
 
-$('#chips_want_be_helped').chips({
-    placeholder: 'Quero ajuda com',
-    autocompleteOptions: {
-    data: {
-        'Banco de Dados': null,
-        'Algoritmos': null,
-        'Programação Orientada a Objetos': null,
-        'Design de Interação': null,
-        'Análise e Projeto de Sistemas': null,
-        'Sistemas Operacionais': null,
-        'Desenvolvimento de Software': null,
-        'Estrutura de Dados': null
-
-    },
-    limit: Infinity,
-    minLength: 1
-    },
-    onChipAdd(e,chip){
-        var elem = document.querySelector('.chips');
-        var instance = M.Chips.getInstance(elem);
-        var content = chip.childNodes[0].textContent
-        var dataInserted = instance.chipsData;
-        var data = instance.options.autocompleteOptions.data;
-
-        var contains = false;
-        
-        $.each(data, function(index, value){
-            if(index == content)
-                contains = true;
-        });
-
-        if(!contains){            
-            instance.chipsData.splice(dataInserted.length-1,dataInserted.length);
-            $(chip).detach();
-        }
-    },
-    onChipDelete(e,chip){
-    }
-});
-
-$('#chips-want-to-help').chips({
-    placeholder: 'Sou bom em',
-    autocompleteOptions: {
-    data: {
-        'Banco de Dados': null,
-        'Algoritmos': null,
-        'Programação Orientada a Objetos': null,
-        'Design de Interação': null,
-        'Análise e Projeto de Sistemas': null,
-        'Sistemas Operacionais': null,
-        'Desenvolvimento de Software': null,
-        'Estrutura de Dados': null
-
-    },
-    limit: Infinity,
-    minLength: 1
-    },
-    onChipAdd(e,chip){
-        var elem = document.querySelector('.chips');
-        var instance = M.Chips.getInstance(elem);
-        var content = chip.childNodes[0].textContent
-        var dataInserted = instance.chipsData;
-        var data = instance.options.autocompleteOptions.data;
-
-        var contains = false;
-        
-        $.each(data, function(index, value){
-            if(index == content)
-                contains = true;
-        });
-
-        if(!contains){            
-            instance.chipsData.splice(dataInserted.length-1,dataInserted.length);
-            $(chip).detach();
-        }
-    }
-});
 
 $("#next-fs1").click(function (){
     form.validate({
@@ -199,7 +122,7 @@ $("#next-fs2").click(function(){
 
     var valid = false;
 
-    if($('#select_course').val() == null){
+    if($('#select_course').val() === null){
         $('#select_course_container').append('<span class="helper-text" id="course_error" style="">Escolha seu curso.</span>')
     }else{
         valid = true;

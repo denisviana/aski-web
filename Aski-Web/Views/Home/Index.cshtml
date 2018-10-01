@@ -1,11 +1,14 @@
-﻿@{
+﻿@using Aski_Web.Models
+@model User
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 
 <div >
 
-    <form class="col s11 m9 l3" id="msform">
+    <form class="col s11 m9 l4" id="msform">
 
         <fieldset id="fs-1">
 
@@ -52,17 +55,7 @@
 
         </fieldset>
 
-        <fieldset id="fs-2">
-
-            <div class="input-field col s12 want-be-helped" id="select_course_container">
-                <select name="select_course" id="select_course" required>
-                    <option value="0" disabled selected>Selecione seu curso</option>
-                    <option value="1">Sistemas de Informação</option>
-                    <option value="2">Ciência da Computação</option>
-                    <option value="3">Engenharia Civil</option>
-                </select>
-                <label>Curso</label>
-            </div>
+        <fieldset id="fs-2">           
 
             <div class="col s12 want-be-helped">
                 <h6 class="left-align register-header"><b>NOS DIGA COM QUAIS MATÉRIAS VOCÊ PRECISA DE AJUDA.</b></h6>
@@ -85,12 +78,14 @@
                 Anterior
             </button>
 
-            <button class="next waves-effect waves-light btn center-align" id="next-fs2" type="submit" name="next" style="margin-top: 20px;">
+            <button class="next waves-effect waves-light btn center-align" id="saveUser" type="button" name="next" style="margin-top: 20px;">
                 FINALIZAR
             </button>
 
         </fieldset>
        
     </form>
+    
+
 </div>
 

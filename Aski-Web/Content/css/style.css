@@ -122,11 +122,14 @@ margin-left: 35px;
     border: 0 none;
     border-radius: 5px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 20px 30px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     box-sizing: border-box;
     width: 100%;
     position: absolute;
-    margin: 12% auto;
+    margin: 5% auto;
 }
 
 #msform fieldset:not(:first-of-type) {

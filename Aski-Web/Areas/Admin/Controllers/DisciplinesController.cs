@@ -29,26 +29,78 @@ namespace Aski_Web.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult Editar(string id)
+        {
+
+            var response = client.GetAsync("api/disciplines/" + id).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var discipline = response.Content.ReadAsAsync<Discipline>().Result;
+                return View(discipline);
+            }
+
+            ViewBag.ToastMsg = "Falha ao recuperar os dados";
+            return View();
+        }
+
 
         //Save Discipline
-        public async Task<ActionResult> SaveDisciplineAsync(Discipline discipline){
+        [HttpPost]
+        public ActionResult Cadastrar(Discipline discipline){
 
-            HttpResponseMessage response = await client.PostAsJsonAsync("", discipline);
+            HttpResponseMessage response = client.PostAsJsonAsync("api/disciplines", discipline).Result;
 
-            if(response.IsSuccessStatusCode){
+            if (ModelState.IsValid)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    ModelState.Clear();
+                    ViewBag.ToastMsg = "Disciplina cadastrada com sucesso";
+                }
+                else
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+                        ViewBag.ToastMsg = "Já existe uma disciplina com o mesmo nome";
+                    else
+                        ViewBag.ToastMsg = "Falha ao cadastrar a disciplina";
 
-                return View();
+                    return View(discipline);
+                }
 
             }
 
             return View();
         }
 
+        [HttpPost]
+        public ActionResult EditarDisciplina(Discipline discipline)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                var response = client.PutAsJsonAsync("api/disciplines/" + discipline.Id, discipline).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    ViewBag.ToastMsg = "Disciplina atualizada com sucesso";
+                    ModelState.Clear();
+                    return RedirectToAction("Home", "Disciplines");
+                }
+
+                ViewBag.ToastMsg = "Falha ao atualizar a disciplina";
+                return View("Editar",discipline);
+
+            }
+            return View("Editar",discipline);
+
+        }
+
 
         //Get all disciplines
-        public async Task<ActionResult> GetAllDisciplinesAsync(){
+        public ActionResult GetAllDisciplinesAsync(){
 
-            HttpResponseMessage response = await client.GetAsync("api/disciplines");
+            HttpResponseMessage response = client.GetAsync("api/disciplines").Result;
             List<Discipline> disciplines = new List<Discipline>();
 
             if(response.IsSuccessStatusCode){
@@ -60,10 +112,10 @@ namespace Aski_Web.Areas.Admin.Controllers
 
 
         //Get discipline by id
-        public async Task<ActionResult> GetDisciplineByIdAsync(string id)
+        public ActionResult GetDisciplineByIdAsync(string id)
         {
 
-            HttpResponseMessage response = await client.GetAsync("api/disciplines/{id}");
+            HttpResponseMessage response = client.GetAsync("api/disciplines/"+id).Result;
             List<Discipline> disciplines = new List<Discipline>();
 
             if (response.IsSuccessStatusCode)
@@ -72,40 +124,23 @@ namespace Aski_Web.Areas.Admin.Controllers
             }
 
             return View(disciplines);
-        }
-
-
-        //Update discipline
-        public async Task<ActionResult> UpdateDisciplineAsync(Discipline discipline)
-        {
-
-            HttpResponseMessage response = await client.PutAsJsonAsync("$api/disciplines/{discipline.Id}", discipline);
-
-            if (response.IsSuccessStatusCode)
-            {
-
-                return View();
-
-            }
-
-            return View();
-        }
+        }        
 
 
         //Delete discipline
-        public async Task<ActionResult> UpdateDisciplineAsync(string id)
+        public ActionResult Delete(string id)
         {
 
-            HttpResponseMessage response = await client.DeleteAsync("$api/disciplines/{id}");
+            HttpResponseMessage response = client.DeleteAsync("api/disciplines/"+id).Result;
 
             if (response.IsSuccessStatusCode)
             {
-
+                ViewBag.ToastMsg = "Disciplina removida com sucesso";
                 return View();
-
             }
 
-            return View();
+            ViewBag.TostMsg = "Falha ao remover disciplina";
+            return RedirectToAction("Home", "Disciplines");
         }
 
 

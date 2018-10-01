@@ -21,8 +21,8 @@
                         <i class="material-icons mdl-list__item-icon">book</i>
                         @discipline.Name
                     </span>
-                    <a class="mdl-color-text--grey-500" href="#"><i class="material-icons icons">edit</i></a>
-                    <a class="mdl-color-text--grey-500" href="#"><i class="material-icons icons">delete</i></a>
+                    <a class="mdl-color-text--grey-500" href="@Url.Action("Editar","Disciplines", new { id = discipline.Id })"><i class="material-icons icons">edit</i></a>
+                    <a class="mdl-color-text--grey-500" href="@Url.Action("Delete","Disciplines", new { id = discipline.Id })"><i class="material-icons icons">delete</i></a>
                 </li>
             }
 
