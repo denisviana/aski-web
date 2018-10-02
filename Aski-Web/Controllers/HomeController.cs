@@ -42,6 +42,34 @@ namespace Aski_Web.Controllers
         [HttpPost]
         public JsonResult SaveUser(HomeViewModel homeViewModel){
 
+            var hasDificultyInIds = new List<Discipline>();
+            var hasDomainInIds = new List<Discipline>();
+
+            for(int i=0; i<homeViewModel.HasDificultyIn.Count; i++)
+            {
+                hasDificultyInIds.Add(new Discipline {
+                    Id = homeViewModel.HasDificultyIn[i]
+                });
+            }
+
+            for(int i=0; i<homeViewModel.HasDomainIn.Count; i++)
+            {
+                hasDomainInIds.Add(new Discipline
+                {
+                    Id = homeViewModel.HasDomainIn[i]
+                });
+            }
+
+            var user = homeViewModel.User;
+            user.HasDificultyIn = hasDificultyInIds;
+            user.HasDomainIn = hasDomainInIds;
+
+            var response = client.PostAsJsonAsync("api/user", user).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+
+            }
 
             return Json(homeViewModel, JsonRequestBehavior.AllowGet);
         }

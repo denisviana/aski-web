@@ -55,7 +55,7 @@
             })
 
             $.each(disciplinesNames, function (index, value) {
-                chipsData[value] = null;
+                chipsData[value] = null;               
             })
 
             $('#chips_want_be_helped').chips({
@@ -141,13 +141,21 @@
                 var wantToHelp = $('#cb_2').is(':checked');
 
                 var hasDificultyIn = [];
-                var hasDomainIn = wantToHelpData;
+                var hasDomainIn = [];
 
-                $.each(disciplines, function(index,value){
-
-                    
-
-                })
+                for (var i = 0; i < disciplines.length; i++) {
+                    for (var j = 0; j < wantBeHelpedData.length; j++) {
+                        if (wantBeHelpedData[j] === disciplines[i].Name)
+                            hasDificultyIn.push(disciplines[i].Id);
+                    }
+                }
+                
+                for (var i = 0; i < disciplines.length; i++) {
+                    for (var j = 0; j < wantToHelpData.length; j++){
+                        if (wantToHelpData[j] === disciplines[i].Name)
+                            hasDomainIn.push(disciplines[i].Id);
+                    }
+                }
 
                 var user = {
                     name : nameUser,
@@ -171,13 +179,13 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success : function(){
-                        console.log("Sucesso");
+                        M.toast({ html: "Usuário cadastrado com sucesso" });
                     },
                     failure: function(){
-                        console.log("Falhou");       
+                        M.toast({ html: "Falha ao cadastrar usuário" });
                     },
                     error: function(){
-                        console.log("Erro");
+                        M.toast({ html: "Falha ao cadastrar usuário" });
                     }
                 });
 
