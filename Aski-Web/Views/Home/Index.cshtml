@@ -1,91 +1,38 @@
-﻿@using Aski_Web.Models
-@model HomeViewModel
+﻿
+<div class="row" style="margin-top: 5%">
 
-@{
-    ViewBag.Title = "Home Page";
-}
+    <div class="col s12 l7">
+        <div class="ask">
 
+            <span class="header_one">PERGUNTAR</span>
+            <textarea placeholder="Qual sua dúvida?"></textarea>
 
-<div >
-
-    <form class="col s11 m9 l4" id="msform">
-
-        <fieldset id="fs-1">
-
-            <div class="col s12">
-                <h6 class="center-align"><b>Cadastro</b></h6>
-                <h6 class="left-align register-header"><b>CADASTRO</b></h6>
+            <div class="input-field col s6 l3" style="margin-top: 30px;">
+                <select>
+                    <option value="1">10 pontos</option>
+                    <option value="2">15 pontos</option>
+                    <option value="3">20 pontos</option>
+                    <option value="1">25 pontos</option>
+                    <option value="2">30 pontos</option>
+                    <option value="3">35 pontos</option>
+                    <option value="1">40 pontos</option>
+                    <option value="2">45 pontos</option>
+                    <option value="3">50 pontos</option>
+                    <option value="1">55 pontos</option>
+                    <option value="2">60 pontos</option>
+                    <option value="3">65 pontos</option>
+                </select>
+                <label>Essa pergunta vale</label>
             </div>
 
-            <div class="input-field col s12">
-                <input class="validate" type="text" id="name" name="name">
-                <label for="name">Nome Completo</label>
-            </div>
+        </div>
 
-            <div class="input-field col s12">
-                <input class="validate" type="email" id="email" name="email">
-                <label for="email">E-mail</label>
-            </div>
+    </div>
 
-            <div class="input-field col s12">
-                <input class="validate" type="password" id="pass" name="pass">
-                <label for="pass">Senha</label>
-            </div>
-
-            <div class="input-field col s12" style="margin-bottom: 10px;">
-                <input type="password" id="confirm_pass" name="confirm_pass">
-                <label for="confirm_pass">Confirme a senha</label>
-            </div>
-
-            <label class="col s12 m6 l6 cb_container">
-                <input type="checkbox" id="cb_1" name="cb_1" class="filled-in require-one" value="true" checked="checked">
-                <span>Quero ajuda</span>
-            </label>
-
-            <label class="col s12 m6 l6 cb_container">
-                <input type="checkbox" id="cb_2" name="cb_2" class="filled-in require-one" value="true">
-                <span>Vou ajudar alguém</span>
-            </label>
-
-            <div id="cb_error" name="cb_error"></div>
-
-            <button class="next waves-effect waves-light btn center-align" type="button" name="next" id="next-fs1" style="margin-top: 20px;">
-                Próximo
-            </button>
-
-        </fieldset>
-
-        <fieldset id="fs-2">           
-
-            <div class="col s12 want-be-helped">
-                <h6 class="left-align register-header"><b>NOS DIGA COM QUAIS MATÉRIAS VOCÊ PRECISA DE AJUDA.</b></h6>
-            </div>
-
-            <div class="col s12 want-be-helped" id="chips_container1">
-                <div class="chips chips-placeholder chips-autocomplete" id="chips_want_be_helped" name="chips_want_be_helped"></div>
-                <span class="helper-text" id="course_error">Informe pelo menos uma matéria.</span>
-            </div>
-            
-            <div class="col s12 want-to-help">
-                <h6 class="left-align register-header"><b>AJUDE OUTRAS PESSOAS, INFORME AS MATÉRIAS QUE VOCÊ DOMINA.</b></h6>
-            </div>
-
-            <div class="col s12 want-to-help" id="chips_container2">
-                <div class="chips chips-placeholder chips-autocomplete" id="chips-want-to-help"></div>
-            </div>
-
-            <button class="next waves-effect waves-light btn center-align" id="previous-fs2" type="button" name="next" style="margin-top: 20px; margin-right: 20px;">
-                Anterior
-            </button>
-
-            <button class="next waves-effect waves-light btn center-align" id="saveUser" type="button" name="next" style="margin-top: 20px;">
-                FINALIZAR
-            </button>
-
-        </fieldset>
-       
-    </form>
-    
+    <div class="col s12 l4">
+        <div class="answer">
+            asdadasd
+        </div>
+    </div>
 
 </div>
-

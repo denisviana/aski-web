@@ -165,7 +165,6 @@
     <Compile Include="Areas\Admin\Controllers\CoursesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\CadastrarUsuarioController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,7 +174,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Areas\Admin\Controllers\DisciplinesController.cs" />
     <Compile Include="Network\RestClient.cs" />
-    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\UsuarioViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\style.css" />
@@ -287,7 +287,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CadastrarUsuario\Index.cshtml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <None Include="Scripts\umd\popper.min.js.map" />
@@ -346,11 +346,16 @@
     <Content Include="Areas\Admin\Views\Disciplines\Cadastrar.cshtml" />
     <Content Include="Scripts\scriptforms.js" />
     <Content Include="Areas\Admin\Views\Courses\Editar.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Scripts\script_home.js" />
+    <Content Include="Content\css\style_home.css" />
+    <Content Include="Content\img\logo-branca-em-linha.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Views\CadastrarUsuario\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

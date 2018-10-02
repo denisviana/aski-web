@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Aski_Web.Models
 {
-    public class HomeViewModel
+    public class UsuarioViewModel
     {
         public User User { get; set; }
         public List<String> HasDificultyIn { get; set; }
