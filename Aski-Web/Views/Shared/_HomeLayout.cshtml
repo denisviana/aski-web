@@ -20,13 +20,39 @@
         <div class="nav-wrapper">
             <div class="container">
                 <a href="#" class="brand-logo"><img src="~/Content/img/logo-branca-em-linha.png" /></a>
+                <div class="right hide-on-med-and-down nav-right">
+                    <img src="https://scontent.fbfh3-1.fna.fbcdn.net/v/t1.0-9/21558931_1607739389298382_2848468932532515372_n.jpg?_nc_cat=104&oh=760bcac9890b3d0827fdb8328712a0ac&oe=5C19DB32" class="circle"/>
+                    <div class="navbar-infos row">
+                        <span style="font-weight: 700">100 pontos</span>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
+    <div class="row">
+        <div class="col s12 container-tabs">
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#tabItemAsk">PERGUNTAR</a></li>
+                <li class="tab col s3"><a href="#tabItemAnswer">RESPONDER <span class="new badge red badge-tab" data-badge-caption="">4</span></a></li>
+            </ul>
+        </div>
+        <hr class="col s12" />
+        <div class="col s12" id="tabItemAsk"></div>
+        <div class="col s12" id="tabItemAnswer"></div>
+    </div>
+
     <div class="container">
         @RenderBody()
     </div>
+
+    <footer class="page-footer">
+                <div class="footer-copyright">
+                    <div class="container" style="text-align:center">
+                        &copy; Todos os Direitos Reservados - Aski
+                    </div>
+                </div>
+    </footer>
 
     <script src="~/Scripts/jquery-3.3.1.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" type="text/javascript"></script>
