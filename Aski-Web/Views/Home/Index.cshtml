@@ -1,37 +1,93 @@
 ﻿
-<div class="row" style="margin-top: 5%">
+<div class="row" style="margin-top: 2%">
 
-    <div class="col s12 l7">
-        <div class="ask">
+    <div class="col s12 l7" style="padding-top:15px;">
 
-            <span class="header_one">PERGUNTAR</span>
+        <span class="header_one">DÚVIDA</span>
+
+        <div class="ask z-depth-3" id="askId">
+
+            <span style="font-size: 12px; color: gray">Insira sua dúvida, selecione os pontos e a disciplina, e em seguida escolha quem irá te ajudar</span>
+
             <textarea placeholder="Qual sua dúvida?"></textarea>
 
-            <div class="input-field col s6 l3" style="margin-top: 30px;">
-                <select>
-                    <option value="1">10 pontos</option>
-                    <option value="2">15 pontos</option>
-                    <option value="3">20 pontos</option>
-                    <option value="1">25 pontos</option>
-                    <option value="2">30 pontos</option>
-                    <option value="3">35 pontos</option>
-                    <option value="1">40 pontos</option>
-                    <option value="2">45 pontos</option>
-                    <option value="3">50 pontos</option>
-                    <option value="1">55 pontos</option>
-                    <option value="2">60 pontos</option>
-                    <option value="3">65 pontos</option>
-                </select>
-                <label>Essa pergunta vale</label>
+            <div class="row">
+                <div class="input-field col s12 l6" style="margin-top: 20px">
+                    <select>
+                        <option value="1">10 pontos</option>
+                        <option value="2">15 pontos</option>
+                        <option value="3">20 pontos</option>
+                        <option value="1">25 pontos</option>
+                        <option value="2">30 pontos</option>
+                        <option value="3">35 pontos</option>
+                        <option value="1">40 pontos</option>
+                        <option value="2">45 pontos</option>
+                        <option value="3">50 pontos</option>
+                        <option value="1">55 pontos</option>
+                        <option value="2">60 pontos</option>
+                        <option value="3">65 pontos</option>
+                    </select>
+                    <label>Essa pergunta vale</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 l6" style="margin-top: 5px;">
+                    <select>
+                        <option value="1">Banco de Dados</option>
+                        <option value="2">Sistemas Operacionas</option>
+                        <option value="3">Lógica Computacional</option>
+                        <option value="1">Estatística e Probabilidade</option>
+                    </select>
+                    <label>Disciplina</label>
+                </div>
             </div>
 
         </div>
 
     </div>
 
-    <div class="col s12 l4">
-        <div class="answer">
-            asdadasd
+    @{ 
+        List<String> nomes = new List<String>();
+        nomes.Add("Carlos da Silva");
+        nomes.Add("Joana Sales");
+        nomes.Add("Marcia Araujo");
+        nomes.Add("João Ferreira");
+        nomes.Add("Paulo Vinicius");
+        nomes.Add("Juliana");
+        nomes.Add("Rodrigo Santos");
+        nomes.Add("Carla Prado");
+        
+    }
+
+    <div class="col s12 l4" style="padding-top:15px;">
+
+        <span class="header_one">QUEM PODE AJUDAR</span>
+
+        <div class="answer z-depth-3" id="answerId">
+
+            @for (int i = 0; i < 8; i++)
+            {
+                <div class="card horizontal" style="padding-left: 10px;padding-right:10px">
+                    <div class="card-image valign-wrapper">
+                        <img style="width: 40px; display: inline-block" class="circle responsive-img" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png">
+                    </div>
+                    <div class="card-content">
+                        <span style="font-weight: 700; display: block">@nomes[i]</span>
+                        <span style="font-size: 12px; display: block;">Tempo de resposta: 10min</span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        @if (i < 3)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        @if (i < 6)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                    </div>
+                </div>
+            }
         </div>
     </div>
 
