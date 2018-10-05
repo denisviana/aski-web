@@ -136,7 +136,7 @@ namespace Aski_Web.Areas.Admin.Controllers
             if (response.IsSuccessStatusCode)
             {
                 ViewBag.ToastMsg = "Disciplina removida com sucesso";
-                return View();
+                return RedirectToAction("Home", "Disciplines");
             }
 
             ViewBag.TostMsg = "Falha ao remover disciplina";

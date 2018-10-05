@@ -45,20 +45,22 @@ namespace Aski_Web.Controllers
             var hasDificultyInIds = new List<Discipline>();
             var hasDomainInIds = new List<Discipline>();
 
-            for(int i=0; i<usuarioViewModel.HasDificultyIn.Count; i++)
-            {
-                hasDificultyInIds.Add(new Discipline {
-                    Id = usuarioViewModel.HasDificultyIn[i]
-                });
-            }
-
-            for(int i=0; i<usuarioViewModel.HasDomainIn.Count; i++)
-            {
-                hasDomainInIds.Add(new Discipline
+            if(usuarioViewModel.HasDificultyIn!=null)
+                for(int i=0; i<usuarioViewModel.HasDificultyIn.Count; i++)
                 {
-                    Id = usuarioViewModel.HasDomainIn[i]
-                });
-            }
+                    hasDificultyInIds.Add(new Discipline {
+                        Id = usuarioViewModel.HasDificultyIn[i]
+                    });
+                }
+
+            if(usuarioViewModel.HasDomainIn!=null)
+                for(int i=0; i<usuarioViewModel.HasDomainIn.Count; i++)
+                {
+                    hasDomainInIds.Add(new Discipline
+                    {
+                        Id = usuarioViewModel.HasDomainIn[i]
+                    });
+                }
 
             var user = usuarioViewModel.User;
             user.HasDificultyIn = hasDificultyInIds;
