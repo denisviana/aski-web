@@ -64,13 +64,13 @@ namespace Aski_Web.Controllers
             user.HasDificultyIn = hasDificultyInIds;
             user.HasDomainIn = hasDomainInIds;
 
-            var response = client.PostAsJsonAsync("api/user", user).Result;
+            var response = client.PostAsJsonAsync("api/users/create", user).Result;
 
             if (response.IsSuccessStatusCode)
             {
 
             }
-
+     
             return Json(usuarioViewModel, JsonRequestBehavior.AllowGet);
         }
     }

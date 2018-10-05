@@ -49,7 +49,7 @@ namespace Aski_Web.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Cadastrar(Discipline discipline){
 
-            HttpResponseMessage response = client.PostAsJsonAsync("api/disciplines", discipline).Result;
+            HttpResponseMessage response = client.PostAsJsonAsync("api/disciplines/create", discipline).Result;
 
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace Aski_Web.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
 
-                var response = client.PutAsJsonAsync("api/disciplines/" + discipline.Id, discipline).Result;
+                var response = client.PutAsJsonAsync("api/disciplines/update/" + discipline.Id, discipline).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     ViewBag.ToastMsg = "Disciplina atualizada com sucesso";
@@ -131,7 +131,7 @@ namespace Aski_Web.Areas.Admin.Controllers
         public ActionResult Delete(string id)
         {
 
-            HttpResponseMessage response = client.DeleteAsync("api/disciplines/"+id).Result;
+            HttpResponseMessage response = client.DeleteAsync("api/disciplines/delete/"+id).Result;
 
             if (response.IsSuccessStatusCode)
             {

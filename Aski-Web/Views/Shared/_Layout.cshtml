@@ -180,6 +180,7 @@
                     dataType: "json",
                     success : function(){
                         M.toast({ html: "Usuário cadastrado com sucesso" });
+                        window.location.href = '@Url.Action("Index","Home")'
                     },
                     failure: function(){
                         M.toast({ html: "Falha ao cadastrar usuário" });
