@@ -4,6 +4,8 @@
 }
 
 body {
+    min-height: 100vh;
+    flex-direction: column;
     height: 100%;
     font-family: 'Nunito', serif;
     background: #f3f0f5;
@@ -193,4 +195,3 @@ footer {
 .waves-effect.card-answer .waves-ripples {
     background-color: rgba(3,128,144,0.2);
 }
-
